@@ -1,0 +1,89 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Lato", sans-serif;
+    color: #777;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 30px; /*THIS PADDING GET APPLIED TO THE ENTIRE WEB PAGE(IT GIVE A WHITE BORDER ON THE WHOLE SITE)*/
+}
+.header{
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url('./img/hero.jpg');
+    background-size: cover;
+    background-position: top; /*fixed position il top nilkan vendi*/
+    /*(x, y,x   y,  x   y   x  y) clock wise direction il ane x,y edukunath*/
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%); /*Hero section ile polygon shape varan vendi*/
+    /*for a triangle the point are (50% 0, 100% 100%, 0 100%)*/
+    /*refer : css clip path maker website for more coordinates*/
+    position: relative; 
+}
+.logos{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+}
+
+.logo{
+    height: 2.2rem;
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 3.3rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-delay: 0.5s;  /*it takes a 0.5s delay before playing the animation*/
+}
+.heading-primary-sub{
+    display: block;  /*span element need to be converted to a block element to give a line break and to style the element*/
+    font-size: 1rem;
+    letter-spacing: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    /* animation-iteration-count: 3;   animation will happen 3 times */
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes moveInLeft{
+    0%{                                     /*starting stage  of animation*/
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{                                   /*Ending stage of animation*/                 
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
