@@ -35,6 +35,7 @@ body{
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    margin-bottom: 3rem;
 }
 .heading-primary-main{
     display: block;
@@ -61,6 +62,7 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center; /*To center the button*/
 }
 @keyframes moveInLeft{
     0%{                                     /*starting stage  of animation*/
@@ -86,4 +88,58 @@ body{
         opacity: 1;
         transform: translate(0);
     }
+}
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn:link,.btn:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 40px;
+    display: inline-block; /*anchor element style cheyumbo epozhum inline-block akitt venam style cheyam*/
+    transition: all .2s;
+    position: relative;
+}
+.btn-white{
+    background-color: #fff;
+    color: #777;
+    padding: 1rem 2.5rem;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2); /*step:1 click cheyuna effect ine vendi*/
+}
+.btn:active{
+    transform: translateY(-1px); /*click cheyumbo thazhott avana effect ine vendi*/
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*step:2 click cheyuna effect ine vendi*/
+}
+.btn::after{
+    content: "";
+    width: 100%; /*100% of the buttons width*/
+    height: 100%; /*100% of the buttons height*/
+    display: inline-block; /*butti=on nte athe ith thane kodukanam*/
+    border-radius: 40px;
+    position: absolute;
+    top: 0;    /*orginal button nte back il ayitt varan vendi*/
+    left: 0;    /*orginal button nte back il ayitt varan vendi*/
+    z-index: -1;    /*orginal button nte back il ayitt varan vendi*/
+    transition: all 0.4s;
+}
+.btn-white::after{
+    background-color: #fff;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-animate{
+    animation: moveInBottom 0.4s ease-out .75s;
+    animation-fill-mode: backwards; /*to make the button invisible before animation( 0% il koduthekana steps apply avum )*/
 }
