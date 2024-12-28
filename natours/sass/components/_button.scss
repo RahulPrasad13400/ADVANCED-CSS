@@ -1,0 +1,48 @@
+.btn{
+    &:link,&:visited{
+        font-size: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 40px;
+        display: inline-block; /*anchor element style cheyumbo epozhum inline-block akitt venam style cheyam*/
+        transition: all .2s;
+        position: relative;
+    }
+    &-white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+        padding: 1rem 2.5rem;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($color-black, .2); /*step:1 click cheyuna effect ine vendi*/
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active{
+        transform: translateY(-1px); /*click cheyumbo thazhott avana effect ine vendi*/
+        box-shadow: 0 5px 10px rgba($color-black, 0.2); /*step:2 click cheyuna effect ine vendi*/
+    }
+    &::after{
+        content: "";
+        width: 100%; /*100% of the buttons width*/
+        height: 100%; /*100% of the buttons height*/
+        display: inline-block; /*butti=on nte athe ith thane kodukanam*/
+        border-radius: 40px;
+        position: absolute;
+        top: 0;    /*orginal button nte back il ayitt varan vendi*/
+        left: 0;    /*orginal button nte back il ayitt varan vendi*/
+        z-index: -1;    /*orginal button nte back il ayitt varan vendi*/
+        transition: all 0.4s;
+    }
+    &-animate{
+        animation: moveInBottom 0.4s ease-out .75s;
+        animation-fill-mode: backwards; /*to make the button invisible before animation( 0% il koduthekana steps apply avum )*/
+    }
+}

@@ -1,0 +1,11 @@
+*,
+*::after,
+*::before{
+    margin : 0;
+    padding: 0;
+    box-sizing: inherit;  /* (* il box-sizing inherit enn venam kodukan - to inherit the property to all the elements) */
+}
+
+body{
+    box-sizing: border-box;  /* (after giving inherit property on * we should give border-box on the body) */
+}

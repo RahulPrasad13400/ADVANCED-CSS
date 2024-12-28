@@ -1,0 +1,22 @@
+.header{
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url('./img/hero.jpg');
+    background-size: cover;
+    background-position: top; /*fixed position il top nilkan vendi*/
+    /*(x, y,x   y,  x   y   x  y) clock wise direction il ane x,y edukunath*/
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%); /*Hero section ile polygon shape varan vendi*/
+    /*for a triangle the point are (50% 0, 100% 100%, 0 100%)*/
+    /*refer : css clip path maker website for more coordinates*/
+    position: relative; 
+
+    &__logos{             /*in this case,  & === .header */
+        position: absolute;
+        top: 2.5rem;
+        left: 2.5rem;
+    } 
+
+    &_logo{
+        height: 2.2rem;
+    }
+}

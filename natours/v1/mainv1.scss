@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before{
+    margin : 0;
+    padding: 0;
+    box-sizing: inherit;  /* (* il box-sizing inherit enn venam kodukan - to inherit the property to all the elements) */
+}
+$color-primary : #55c57a;
+$color-primary-light : #7ed56f;
+$color-primary-dark : #28b485;
+$color-grey-dark : #777;
+$color-white : #fff;
+body{
+    box-sizing: border-box;  /* (after giving inherit property on * we should give border-box on the body) */
+    font-family: "Lato", sans-serif;
+    color: $color-grey-dark;
+    font-size: 62.5%;
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 30px; /*THIS PADDING GET APPLIED TO THE ENTIRE WEB PAGE(IT GIVE A WHITE BORDER ON THE WHOLE SITE)*/
+}
+.header{
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url('./img/hero.jpg');
+    background-size: cover;
+    background-position: top; /*fixed position il top nilkan vendi*/
+    /*(x, y,x   y,  x   y   x  y) clock wise direction il ane x,y edukunath*/
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%); /*Hero section ile polygon shape varan vendi*/
+    /*for a triangle the point are (50% 0, 100% 100%, 0 100%)*/
+    /*refer : css clip path maker website for more coordinates*/
+    position: relative; 
+}
+.logos{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+}
+
+.logo{
+    height: 2.2rem;
+}
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 3.3rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-delay: 0.5s;  /*it takes a 0.5s delay before playing the animation*/
+}
+.heading-primary-sub{
+    display: block;  /*span element need to be converted to a block element to give a line break and to style the element*/
+    font-size: 1rem;
+    letter-spacing: 1.3rem;
+    font-weight: 700;
+    text-align: center; 
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    /* animation-iteration-count: 3;   animation will happen 3 times */
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /*To center the button*/
+}
+@keyframes moveInLeft{
+    0%{                                     /*starting stage  of animation*/
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{                                   /*Ending stage of animation*/                 
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn:link,.btn:visited{
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 40px;
+    display: inline-block; /*anchor element style cheyumbo epozhum inline-block akitt venam style cheyam*/
+    transition: all .2s;
+    position: relative;
+}
+.btn-white{
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 1rem 2.5rem;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2); /*step:1 click cheyuna effect ine vendi*/
+}
+.btn:active{
+    transform: translateY(-1px); /*click cheyumbo thazhott avana effect ine vendi*/
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*step:2 click cheyuna effect ine vendi*/
+}
+.btn::after{
+    content: "";
+    width: 100%; /*100% of the buttons width*/
+    height: 100%; /*100% of the buttons height*/
+    display: inline-block; /*butti=on nte athe ith thane kodukanam*/
+    border-radius: 40px;
+    position: absolute;
+    top: 0;    /*orginal button nte back il ayitt varan vendi*/
+    left: 0;    /*orginal button nte back il ayitt varan vendi*/
+    z-index: -1;    /*orginal button nte back il ayitt varan vendi*/
+    transition: all 0.4s;
+}
+.btn-white::after{
+    background-color: $color-white;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-animate{
+    animation: moveInBottom 0.4s ease-out .75s;
+    animation-fill-mode: backwards; /*to make the button invisible before animation( 0% il koduthekana steps apply avum )*/
+}

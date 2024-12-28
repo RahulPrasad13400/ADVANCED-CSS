@@ -1,0 +1,65 @@
+//some changes are made from the style.SCSS 
+
+{
+    margin : 0;
+    padding: 0;
+  }
+  $primary-color : #f9ed69;
+  $color-secondary : #f08a5d;
+  $color-teritary : #b835e;
+  $width-button: 150px;
+  
+  @mixin clearfix{
+      &::after{                 //float cheyumobo background color invisible ayi so inganathe oru class use cheyutha background veendum visible avum 
+    content: "";
+    clear: both;                   
+    display: table;
+    }
+  }
+  nav{
+    background-color: $primary-color; 
+    @include clearfix;
+  }
+  @mixin style-link-text($col){
+      text-decoration: none;
+       color: $col;
+       text-transform: uppercase;
+  }
+  .navigation{
+    list-style: none;
+    float: left;
+    li{
+       display: inline-block;
+       margin-top: 20px;
+       margin-left: 30px;
+       &:first-child{                  //.navigation li:first-child
+        margin: 0;
+       }
+       a {
+          @include style-link-text(pink);
+       }
+     }
+  }
+  %btn-placeholder{
+      display: inline-block;
+      padding: 20px;
+      @include style-link-text(yellow);
+      background-color: $color-secondary;
+      border-radius : 100px;
+      text-transform: uppercase;
+      width: $width-button;
+      text-align: center;
+  }
+  .button{
+    float: right;
+    .btn-main:link,
+    .btn-hot:link{
+    @extend %btn-placeholder;
+    }
+    .btn-main{
+      &:hover{
+        background-color: darken($color-secondary, 15%);  //it darkens the background color by 15% || lighten() to make it lighten 
+      }
+    }
+  }
+  
