@@ -1,6 +1,5 @@
 .row{
-    max-width: 80rem;
-    background-color: #eee;
+    max-width: 75rem;
     margin: 0 auto;
     &:not(:last-child){             //  not() - it selects every child except the last child 
         margin-bottom: $gutter-vertical; 
@@ -9,7 +8,6 @@
     @include clearfix;
 
     [class^="col-"]{      //^ - starts with , * - contains , $ - end with (html ile ella class um check cheyyum enitt athile col- start cheyuna elements ine filter cheyyuth edukum) , class pole thane alt athupolathe attributes use cheyyam
-        background-color: orange;
         float: left;
         &:not(:last-child){      // col-1-of-2 enn name ulla last child 
             margin-right: $gutter-horizontal;
@@ -31,6 +29,12 @@
     .col-2-of-4{
         width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});   
     }
+
+    .col-3-of-4{
+        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});   
+    }
+
+    
 }
 
 

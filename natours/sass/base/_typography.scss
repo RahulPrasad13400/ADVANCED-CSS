@@ -26,7 +26,7 @@ body{
     
     &-sub{
         display: block;  /*span element need to be converted to a block element to give a line break and to style the element*/
-        font-size: 1rem;
+        font-size: $default-font-size;
         letter-spacing: 1.3rem;
         font-weight: 700;
         text-align: center; 
@@ -44,3 +44,35 @@ body{
     text-align: center; /*To center the button*/
 }
 
+.heading-secondary{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5rem;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;   //it clip the background image to the text and removes the remaining part 
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    &:hover{
+        transform: skewY(2deg) skewX(20deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba($color-black,0.2);
+    }
+}
+
+.heading-teritary{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $default-font-size;
+}
+
+.paragraph{
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
