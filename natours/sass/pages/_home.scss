@@ -1,6 +1,10 @@
 .section-about{
     background-color: $color-grey-light-1;
-    padding: 25rem 0;
-    margin-top: -20rem; // -ve ,marign to move up the section page and to cover the gap made by the polygon shape 
-    
+    padding: 25rem 0 10rem 0;
+    margin-top: -20rem; // -ve ,marign to move up the section page and to cover the gap made by the polygon shape    
+}
+.features{
+    padding: 12rem 0;
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.8),rgba($color-primary-dark,0.8)) ,url(../../img/nat-4.jpg);
+    background-size: cover;
 }
