@@ -1,0 +1,29 @@
+.card{
+    perspective: 150rem; //just a big number , for the nice 180deg rotation 
+    -moz-perspective: 150rem;  //making it work on the mozilla browser 
+
+    &__side{
+        background-color: orangered;
+        height: 30rem;
+        transition: all 1s;
+        font-size: 1rem;
+        color: #fff;
+
+        &-front{
+            background-color: orange;
+        }
+
+        &-back{
+            background-color: blue;
+            transform: rotateY(0deg);
+        }
+    }
+
+    &:hover  &__side-front{
+        transform: rotateY(180deg);
+    }
+
+    &:hover  &__side-back{
+        transform: rotateY(0);
+    }
+}
