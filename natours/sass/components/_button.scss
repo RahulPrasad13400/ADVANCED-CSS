@@ -17,6 +17,15 @@
             background-color: $color-white;
         }
     }
+    &-green{
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 1rem 2.5rem;
+
+        &::after{
+            background-color: $color-primary;
+        }
+    }
     &:hover{
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba($color-black, .2); /*step:1 click cheyuna effect ine vendi*/
