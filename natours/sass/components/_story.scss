@@ -1,0 +1,40 @@
+.story{
+    width: 75%;
+    margin: 0 auto; // to make the div centered 
+    background-color: $color-white;
+    box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+    border-radius: 3px;
+    padding: 4rem;
+    font-size: $default-font-size;
+    padding-left: 4rem;
+    transform: skewX(-12deg);
+
+    &__shape{
+        width: 7.5rem;
+        height: 7.5rem;
+        -webkit-shape-outside : circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%); //first 50% indicates the radius it will be calculated the from the height and width in this case it will be around 3.7 and diameter will be 7.5 and the next 50% 50% indicates the positioning and it makes the circle to the center position
+        float: left;
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-1.5rem) skewX(12deg); // to move the circle to the left side 
+        position: relative;
+    }
+
+    &__img{
+        height: 100%;
+
+    }
+
+    &__text{
+        transform: skewX(12deg);
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
