@@ -23,6 +23,29 @@
 }
 
 .section-stories{
-    padding: 0 0;
-    background-color: $color-grey-light-1;
+    position: relative;
+    padding: 10rem 0 4rem 0;
+}
+
+.section__book{
+    padding: 8rem 0;
+    background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
+}
+
+.book{
+    background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, 
+                                              rgba($color-white, 0.9) 50%,                      
+                                                transparent 50%), url(../../img/nat-10.jpg);
+
+                                                //105 deg means aa oru cheriv kittan vendi form box ine 
+                                                // 0% thott 50 % vare white color kittum then 50%(half) thott angott transparent kodukkum
+    height: 30rem;
+    background-size: cover;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+
+    &__form{
+        width: 50%;
+        padding: 4rem;
+    }
 }

@@ -2,7 +2,7 @@
     max-width: 75rem;
     margin: 0 auto;
     &:not(:last-child){             //  not() - it selects every child except the last child 
-        margin-bottom: $gutter-vertical; 
+        margin-bottom: 3rem; 
     }
 
     @include clearfix;

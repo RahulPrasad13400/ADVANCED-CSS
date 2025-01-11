@@ -1,0 +1,17 @@
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .2;
+    backface-visibility: hidden; // vibrate cheyunath avoid cheyan 
+    overflow: hidden;
+
+    &__content{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // this property allow the video to occupy the entire space of that div 
+    }
+}
